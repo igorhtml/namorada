@@ -13,7 +13,7 @@ body {
     height: 100vh;
     width: 100vw;
 }
-
+        
 .dashboard-container{
     background-color: #161616;
     width: 360px;
@@ -99,9 +99,13 @@ body {
 
 .galeria {
     height: 250px;
-    background-image: url(./img/pexels-duraksama-19079988.jpg);
+    background-image: url(./img/manhart-vw-golf-gti-290.jpg);
     background-position: center;
     background-size: cover;
+}
+
+.galeria h2, .galeria p{
+    text-shadow: 2px 2px 3px black;
 }
 
 .btn-recompensa{
