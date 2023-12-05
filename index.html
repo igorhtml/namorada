@@ -18,8 +18,14 @@
         <div class="login-container">
             <h1 class="login-title">Login</h1>
             <form class="login-form">
-                <input class="login-input" type="text" value="luizaacavalcante" readonly> <!--Borda com CSS e colorir a borda quando o elemento é selecionado-->
-                <input id="login-password" type="password" placeholder="Senha" class="login-input"> <!--Borda com CSS e colorir a borda quando o elemento é selecionado-->
+                <div  class="input-wrapper">
+                    <img src="./img/girlAvatar.svg" alt="avatar de garota">
+                    <input class="login-input" type="text" value="luizaacavalcante" readonly>
+                </div> <!--Borda com CSS e colorir a borda quando o elemento é selecionado-->
+                <div id="input-wrapper" class="input-wrapper">
+                    <img src="./img/VectorLock.svg" alt="icone de cadeado">
+                    <input id="login-password" type="password" placeholder="Senha" class="login-input">
+                </div> <!--Borda com CSS e colorir a borda quando o elemento é selecionado-->
                 <input type="button" value="Entrar" id="password-submit" class="login-submit" onclick="logar()">
                 <a class="login-reset" href="./redefinir.html">Esqueci a senha</a>
             </form>
