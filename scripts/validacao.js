@@ -1,7 +1,3 @@
-// var botaoEntrar = document.getElementById("password-submit");
-// botaoEntrar.addEventListener ('click', () => {
-//     logar();
-// });
 const SENHA = "capacete";
 
 function logar () {

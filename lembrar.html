@@ -3,29 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./styles/login.css">
+    <link rel="stylesheet" href="./styles/base.css">
     <title>Namorada</title>
 </head>
 <body>
-    <div class="container">
+    <div class="app-container">
         <div class="back">
-            <img src="./img/Group 13backArrow.svg" alt="">
+            <a href="./index.html"><img src="./img/Group 13backArrow.svg" alt="botao voltar"></a>
             <h1>Lembrar senha</h1>
         </div>
-        <div class="redefinir-container">
-            <form action="" class="redefinir-form">
-                <h3 class="redefinir-title">Dica de senha</h3>
+        <div class="base-container margin-50px">
+            <form class="base-form">
+                <h3 class="lembrar-title">Dica de senha</h3>
                 <ul class="dicas">
                     <li class="dica">É amarelo</li>
                     <li class="dica">Protege a cabeça</li>
                     <li class="dica">Trabalhadores usam</li>
                     <li class="dica">É de plástico</li>
                 </ul>
-                <div id="input-wrapper" class="input-wrapper">
+                <div class="base-input-wrapper">
                     <img src="./img/VectorLock.svg" alt="icone de cadeado">
-                    <input type="password" placeholder="Senha" id="redefinir-password" class="redefinir-input">
+                    <input class="base-input" type="password" placeholder="Senha" id="redefinir-password">
                 </div>
-                <input type="button" class="redefinir-submit" value="Lembrar senha" onclick="lembrarSenha()">   
+                <input type="button" class="base-button" value="Lembrar senha" onclick="lembrarSenha()">   
             </form>
         </div>
         <div id="sucesso" class="sucesso feedback display-none">
@@ -36,6 +37,6 @@
             <span>Senha incorreta</span>
         </div>
     </div>
-    <script src="validacao.js"></script>
+    <script src="./scripts/validacao.js"></script>
 </body>
 </html>
