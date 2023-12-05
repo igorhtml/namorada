@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Namorada</title>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <p>Logo</p>
+        </div>
+        <div class="greating">
+            <h1>Bem vindo(a)</h1>
+            <h3>Feliz aniversário de namoro &#10084;</h3>
+        </div>
+        <div class="login-container">
+            <h1 class="login-title">Login</h1>
+            <form class="login-form">
+                <input class="login-input" type="text" value="luizaacavalcante" readonly> <!--Borda com CSS e colorir a borda quando o elemento é selecionado-->
+                <input id="login-password" type="password" placeholder="Senha" class="login-input"> <!--Borda com CSS e colorir a borda quando o elemento é selecionado-->
+                <input type="button" value="Entrar" id="password-submit" class="login-submit" onclick="logar()">
+                <a class="login-reset" href="./redefinir.html">Esqueci a senha</a>
+            </form>
+        </div>
+
+        <div id="sucesso" class="sucesso feedback display-none">
+            <span>Entrando</span>
+        </div>
+
+        <div id="falha" class="falha feedback display-none">
+            <span>Tente novamente</span>
+        </div>
+    </div>
+    
+    <script src="validacao.js"></script>
+</body>
+</html>
