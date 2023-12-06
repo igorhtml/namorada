@@ -14,12 +14,14 @@ const perguntas = ["Qual é minha cor favorita?", "Onde nos vimos pela primeira 
     var resposta3 = document.getElementById("resposta-3");
    
     var i = 0;
+    var acertos = 0;
     //contador para saber o número da pergunta
 
     //eventos click para cada botão resposta
     resposta1.addEventListener('click', () => {
       if(resposta1.innerHTML == respostas[i][respostaCerta[i]]){
         console.log("acertou");
+        acertos += 1 ;
         document.getElementById(`bloco-${i}`).classList.add("success-background");
       } else {
         console.log("errou");
@@ -31,6 +33,7 @@ const perguntas = ["Qual é minha cor favorita?", "Onde nos vimos pela primeira 
     resposta2.addEventListener('click', () => {
       if(resposta2.innerHTML == respostas[i][respostaCerta[i]]){
         console.log("acertou");
+        acertos += 1 ;
         document.getElementById(`bloco-${i}`).classList.add("success-background");
       } else {
         console.log("errou");
@@ -42,6 +45,7 @@ const perguntas = ["Qual é minha cor favorita?", "Onde nos vimos pela primeira 
     resposta3.addEventListener('click', () => {
       if(resposta3.innerHTML == respostas[i][respostaCerta[i]]){
         console.log("acertou");
+        acertos += 1 ;
         document.getElementById(`bloco-${i}`).classList.add("success-background");
       } else {
         console.log("errou");
@@ -61,12 +65,16 @@ function mudaPergunta () {
         resposta3.innerHTML = respostas[i][2];
     }  
 
-    if (i == 3) {
-
+    if (i == perguntas.length) {
         console.log("fechar");
+        console.log("acertos: " + acertos);
           setTimeout(() => {
             closePopup();
-          }, "3000");
+            for (let j = 0; j < perguntas.length; j++){
+                document.getElementById(`bloco-${j}`).classList.remove("success-background");
+                document.getElementById(`bloco-${j}`).classList.remove("fail-background");
+            }
+          }, "2000");
           
     }
 }
