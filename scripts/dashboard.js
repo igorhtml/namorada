@@ -1,3 +1,23 @@
+
+
+function openGallery () {
+	
+	document.getElementById('gallery-popup').classList.remove('hidden');
+    document.getElementById('gallery-popup').classList.add('show');
+}
+
+function closeGallery () {
+	document.getElementById('gallery-popup').classList.remove('show');
+    document.getElementById('gallery-popup').classList.add('hide');
+	setTimeout(() => {
+		document.getElementById('gallery-popup').classList.remove('hide');
+		document.getElementById('gallery-popup').classList.add('hidden');
+	  }, "150");
+}
+
+
+
+//quiz
 const perguntas = ["Qual é minha cor favorita?", "Onde nos vimos pela primeira vez?", "Quanto eu calço?"];
     const respostas = [
         ["azul", "vermelho", "preto"],
