@@ -20,11 +20,14 @@ body {
 }
 
 .app-container{
-    width: 40%; /* ou qualquer largura desejada */
+    width: 40%;
     margin: 0 auto; /* centraliza o container */
     background-color: #161616;
-    height: 100vh;
     padding: 35px;
+}
+
+.heigth-100vh {
+    height: 100vh;
 }
 
 .element-container-column-center{

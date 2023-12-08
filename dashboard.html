@@ -8,62 +8,76 @@
     <title>Namorada</title>
 </head>
 <body>
-    <div class="content-container">
-        <div class="dashboard-container">
-            <div class="info">
-                <div class="name-avatar">
-                    <img class="avatar" src="./img/girlAvatar.png" alt="">
-                    <h1 class="name">Olá, Namorada</h1>
-                </div>
-                <div class="date-emoji">
-                    <span class="date">06/12/2023</span>
-                    <img class="emoji" src="./img/party-popper.png" alt="">
-                </div>
+    <div class="app-container">
+        
+        <!-- cabeçalho com informações -->
+        <div class="info">
+            <div class="name-avatar">
+                <img class="avatar" src="./img/girlAvatar.png" alt="">
+                <h1 class="name">Olá, Namorada</h1>
             </div>
-            <div class="line"></div>
-    
-            <div class="card quiz">
-                <h2 class="card-title">Quanto sabe sobre namorado?</h2>
-                <p class="card-p">Responda questões e ganhe pontos!</p>
-                <button id="btn-play" class="btn-play" onclick="openQuiz();">Jogar</button>
-            </div>
-
-            <div id="quiz-popup">
-                <div id="popup-content">
-                  <h2 id="pergunta" class="pergunta"></h2>
-                  <button id="resposta-1" class="resposta"></button>
-                  <button id="resposta-2" class="resposta"></button>
-                  <button id="resposta-3" class="resposta"></button>
-                  <div id="resposta-visual-container" class="resposta-visual-container">
-                    <div id="bloco-0" class="bloco"></div>
-                    <div id="bloco-1" class="bloco"></div>
-                    <div id="bloco-2" class="bloco"></div>
-                  </div>
-                </div>
-            </div>
-    
-            <div class="card galeria">
-                <h2 class="card-title">Galeria de memórias</h2>
-                <p class="card-p">Suas fotos mais marcantes</p>
-            </div>
-
-            <div class="card sugestao">
-                <h2 class="card-title">Sugestões</h2>
-                <p class="card-p">Deixe aqui sugestões para o namoro!</p>
-                <button class="btn-play">Sugerir</button>
-            </div>
-    
-            <div class="card recompensa">
-                <h2 class="card-title">Recompensas</h2>
-                <p class="card-p">Troque pontos por recompensas</p>
-                <button class="btn-recompensa">Ver recompensas</button>
+            <div class="date-emoji">
+                <span class="date">06/12/2023</span>
+                <img class="emoji" src="./img/party-popper.png" alt="">
             </div>
         </div>
-<!--     Não sei se vou manter o rodapé, caso sobre tempo refaço     -->
-        <!-- <div class="footer">
-            <p>Preguiça de fazer rodapé</p>
+        <div class="line"></div>
+
+        <!-- Galeria de fotos -->
+        <div class="card galeria margin-bottom-20px">
+            <h2 class="card-title">Galeria de memórias</h2>
+            <p class="card-p">Suas fotos mais marcantes</p>
+        </div>
+
+        <!-- Quiz de perguntas -->
+        <div class="card quiz margin-bottom-20px">
+            <h2 class="card-title">Quanto sabe sobre namorado?</h2>
+            <p class="card-p">Responda questões e ganhe pontos!</p>
+            <button id="btn-play" class="btn-play" onclick="openQuiz()">Jogar</button>
+        </div>
+
+        <div id="quiz-popup" class="popup">
+            <div id="popup-content">
+                <h2 id="pergunta" class="pergunta"></h2>
+                <button id="resposta-1" class="resposta"></button>
+                <button id="resposta-2" class="resposta"></button>
+                <button id="resposta-3" class="resposta"></button>
+                <div id="resposta-visual-container" class="resposta-visual-container">
+                <div id="bloco-0" class="bloco"></div>
+                <div id="bloco-1" class="bloco"></div>
+                <div id="bloco-2" class="bloco"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Caça ao tesouro -->
+        <div class="card caca-tesouro">
+            <h2 class="card-title">Caça ao tesouro</h2>
+            <p class="card-p">Consegue encontrar o tesouro escondido?</p>
+            <button class="btn-play" onclick="openCacaTesouro();">Jogar</button>
+        </div>
+
+        <div id="caca-tesouro-popup" class="popup">
+            <div id="caca-tesouro-popup-content">
+                <h2 id="dica" class="dica"></h2>
+                <h1 id="pedido" class="pedido">Quer namorar comigo?</h1>
+                <div id="senha-caca-tesouro-wrapper" class="base-input-wrapper">
+                    <input type="text" id="senha-caca-tesouro" class="base-input" placeholder="Senha">
+                </div>
+                <button id="prox-dica" class="btn-play" onclick="proximaDica()">Próxima dica</button>
+                <div id="falha" class="feedback display-none">
+                    <span>Tente novamente</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="card recompensa">
+            <h2 class="card-title">Recompensas</h2>
+            <p class="card-p">Troque pontos por recompensas</p>
+            <button class="btn-recompensa">Ver recompensas</button>
         </div> -->
     </div>
+
     <script src="./scripts/dashboard.js"></script>
     
 </body>

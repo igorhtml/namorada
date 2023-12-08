@@ -81,9 +81,8 @@ function mudaPergunta () {
 
 function openQuiz() {
     i = 0;
-    console.log(i);
-    console.log(perguntas.length);
-    document.getElementById('quiz-popup').style.display = 'flex';
+	document.getElementById('quiz-popup').classList.remove('hidden');
+    document.getElementById('quiz-popup').classList.add('show');
     pergunta.innerHTML = perguntas[0];
     resposta1.innerHTML = respostas[0][0];
     resposta2.innerHTML = respostas[0][1];
@@ -91,7 +90,74 @@ function openQuiz() {
 }
 
 function closePopup() {
-    document.getElementById('quiz-popup').style.display = 'none';
+    document.getElementById('quiz-popup').classList.remove('show');
+    document.getElementById('quiz-popup').classList.add('hide');
+	setTimeout(() => {
+		document.getElementById('quiz-popup').classList.remove('hide');
+		document.getElementById('quiz-popup').classList.add('hidden');
+	  }, "250");
+	
 }
 
 // codigo da resposta visual
+
+// codigo caça ao tesouro
+
+function openCacaTesouro () {
+	i = 0;
+
+	//mostra os elementos do popup caso estejam ocultos
+	dica.style.display = "block";
+	document.getElementById("senha-caca-tesouro-wrapper").style.display = "block";
+	document.getElementById("prox-dica").innerHTML = "Próxima dica";
+	document.getElementById("falha").style.display = "block";
+	document.getElementById("pedido").style.display = "none";
+
+	//mostra o popup e inicializa a dica
+	dica.innerHTML = dicas[0];
+	document.getElementById('caca-tesouro-popup').classList.remove('hidden');
+	document.getElementById('caca-tesouro-popup').classList.add('show');
+}
+
+const dicas = ["1. Sob o leito onde o corpo descansa encontra-se o que a mente anseia", "2. Do trabalho remoto, a ferramenta. Ela esconde a pista que encontrar você tenta"]
+const senhas = ["você é", "o meu coração"];
+
+var dica = document.getElementById("dica");
+
+function proximaDica () {
+	console.log(document.getElementById("senha-caca-tesouro").value);
+	if (i < 2) {
+		if(document.getElementById("senha-caca-tesouro").value == senhas[i]){
+			i = i + 1;
+			dica.innerHTML = dicas[i];
+			document.getElementById("senha-caca-tesouro").value = "";
+		} else {
+			document.getElementById("senha-caca-tesouro").value = "";
+			document.getElementById("falha").classList.toggle("display-none");
+			setTimeout(() => {
+				document.getElementById("falha").classList.toggle("display-none");
+			}, "2000");
+		}
+	}
+
+	if (i == 3) {
+		document.getElementById('caca-tesouro-popup').classList.remove('show');
+		document.getElementById('caca-tesouro-popup').classList.add('hide');
+		setTimeout(() => {
+			document.getElementById('caca-tesouro-popup').classList.remove('hide');
+			document.getElementById('caca-tesouro-popup').classList.add('hidden');
+		}, "250");
+	}
+
+	if (i == 2) {
+		//oculta os elementos que não devem aparecer
+		i = 3;
+		dica.style.display = "none";
+		document.getElementById("senha-caca-tesouro-wrapper").style.display = "none";
+		document.getElementById("prox-dica").innerHTML = "SIM!";
+		document.getElementById("falha").style.display = "none";
+		// mostrar o pedido
+		document.getElementById("pedido").style.display = "block";
+	}
+
+}
